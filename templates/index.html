@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ChatBot</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+        <link href="{{url_for('static', filename='/style.css')}}" rel="stylesheet"></link>
+
+    </head>
+   <body>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var socket = io.connect("http://localhost:2000")
+            socket.on('connect',function(){
+                socket.send("user connted!");
+
+            });
+            socket.on('message',function(data){
+                $('#messages').append($('<p>').text(data));
+                    // console.log(data);
+            });
+            $('#sendmeg').on('click',function(){
+                socket.send($('#username').val()+":"+$('#message').val())
+                $('#message').val('');
+            })
+        })
+    </script>
+    <main class="main">
+        <h1>Open Cusomer Support Community</h1>
+    <div class="container">
+    <div id="messages">
+
+    </div>
+    <div class="chat-message-user">
+    <input type="text" id="username" class='input_value' placeholder="username">
+    <input type="text" id="message"  class='input_value' placeholder="message"></div>
+    <button id="sendmeg" class="button">Send Message</button>
+    </div>
+</main>
+   </body>
+
+    </html>

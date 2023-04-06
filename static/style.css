@@ -1,0 +1,48 @@
+body{
+    text-align: center;
+    align-items: center;
+    font-size: large;
+    font-style: revert;
+    font-family: monospace;
+    font-weight: 500;
+    padding:5%;
+}
+
+.input_value{
+    padding: 10px;
+    border-radius: 44px;
+    font-style: revert;
+    font-family: monospace;
+}
+
+h1{
+    margin-top: 50px;
+
+}
+.button{
+    padding: 10px;
+    border-radius: 44px;
+    font-style: revert;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: large;
+}
+.button:hover{
+    color:white;
+    background-color: rgb(30, 25, 25);
+}
+.main{
+    background: black;
+    color: white;
+    padding:10px;
+    border-radius: 44px;
+    gap:20px;
+}
+.container{
+    margin-bottom: 10px;
+}
+
+#messages{
+    height: 200px;
+    overflow-y: auto;
+}
